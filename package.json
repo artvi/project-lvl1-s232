@@ -24,7 +24,9 @@
     "url": "https://github.com/artvi/project-lvl1-s232/issues"
   },
   "homepage": "https://github.com/artvi/project-lvl1-s232#readme",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
