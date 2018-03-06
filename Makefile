@@ -1,4 +1,4 @@
-install: 
+install:
 	npm install
 
 start:
@@ -8,4 +8,4 @@ publish:
 	npm publish
 
 lint:
-	npm run eslint
+	npm run eslint ".js" "src/"
