@@ -1,10 +1,11 @@
 {
   "name": "brainless_game",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "starting ver",
   "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
@@ -31,8 +32,11 @@
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
+    "babel-eslint": "^8.2.2",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
-    "eslint": "^4.18.2"
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
   }
 }
