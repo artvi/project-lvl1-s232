@@ -1,6 +1,6 @@
 {
   "name": "brainless_game",
-  "version": "0.0.5a",
+  "version": "0.0.5b",
   "description": "starting ver",
   "main": "index.js",
   "bin": {
@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/artvi/project-lvl1-s232#readme",
   "dependencies": {
+    "hexlet-pairs": "^1.0.5",
+    "math": "0.0.3",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
