@@ -4,8 +4,8 @@ import gameBody from '..';
 const currentTask = 'Find the greatest common divisor of given numbers.';
 
 const findCommonDivisors = () => {
-  const a = Math.floor(Math.random() * 50);
-  const b = Math.floor(Math.random() * 50);
+  const a = Math.floor(Math.random() * 100);
+  const b = Math.floor(Math.random() * 100);
   const question = `${a} ${b}`;
 
   if (a === 0 || b === 0) {
@@ -25,13 +25,13 @@ const findCommonDivisors = () => {
   const str1 = findDivisors(a);
   const str2 = findDivisors(b);
 
-  console.log(str1);
-  console.log(str2);
+  console.log(`// first num divisor list ${str1}`);
+  console.log(`// second num divisor list ${str2}`);
 
   const findCommon = (firstList, secondList) => {
     let commonDivisors = '';
     for (let i = 0; i < firstList.length; i += 1) {
-      if (secondList.indexOf(firstList[i]) !== -1 && firstList[i] !== ' ' && firstList[i + 1] === ' ' && firstList[i - 1] === ' ') {
+      if (firstList[i] !== ' ' && firstList[i + 1] === ' ' && firstList[i - 1] === ' ' && secondList.indexOf(`${firstList[i - 1]}${firstList[i]}${firstList[i + 1]}`) !== -1) {
         commonDivisors += (`${firstList[i]} `);
       }
       if (firstList[i] !== ' ' && firstList[i + 1] !== ' ' && secondList.indexOf(`${firstList[i]}${firstList[i + 1]}`) !== -1) {
@@ -52,8 +52,7 @@ const findCommonDivisors = () => {
   };
   const answer = findAnswer(commonList);
 
-  console.log(commonList);
-  console.log(answer);
+  console.log(`// commonList: ${commonList}`);
 
   return cons(question, answer);
 };
