@@ -23,7 +23,6 @@ const greatestCommonDivisor = () => {
 
   const answer = gcd(big, small);
 
-  console.log(`TestMark: result should be ${answer}`);
   return cons(quest, answer);
 };
 

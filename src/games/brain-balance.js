@@ -30,7 +30,6 @@ const balanceTheNum = (num) => {
       newStr += minValue;
     }
   }
-  console.log(`TestMark: result should be ${newStr}`);
   return newStr;
 };
 

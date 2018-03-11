@@ -30,7 +30,6 @@ const gameOfProgression = () => {
       num += step;
     }
   }
-  console.log(`TestMark: secret is ${answer}`);
   return cons(str, answer);
 };
 
