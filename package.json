@@ -1,6 +1,6 @@
 {
   "name": "brainless_game",
-  "version": "0.0.9a",
+  "version": "0.0.9b",
   "description": "starting ver",
   "main": "index.js",
   "bin": {

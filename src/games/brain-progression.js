@@ -1,4 +1,4 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons, car, cdr, isPair } from 'hexlet-pairs';
 import gameBody from '..';
 
 function getRandomInt(min, max) {
@@ -7,37 +7,37 @@ function getRandomInt(min, max) {
 
 const currentTask = 'What number is missing in this progression?';
 
-const gameOfProgression = () => {
-  const start = getRandomInt(0, 10);
-  const step = getRandomInt(1, 10);
-  const pos = getRandomInt(0, 10);
-
-  let str = '';
-  let num = start;
-  let answer = 0;
-  for (let i = 0; i <= 9; i += 1) {
-    if (i === 0) {
-      str = pos === 0 ? '.. ' : `${start} `;
-      num = start;
-      answer = pos === 0 ? num : 0;
-    }
-    if (i === pos && i !== 0) {
-      str += '.. ';
-      num += step;
-      answer = num;
-    } else if (i !== 0) {
-      str += `${num + step} `;
-      num += step;
-    }
+const createString = (pair) => {
+  if (isPair(pair)) {
+    const a = createString(car(pair));
+    const b = createString(cdr(pair));
+    return `${a} ${b}`;
   }
-  return cons(str, answer);
+  return String(pair);
+};
+
+
+const createProgression = (start, step, pos) => {
+  const iter = (acc) => {
+    const progression = acc === pos ? '..' : start + (acc * step);
+    if (acc === 9) {
+      return progression;
+    }
+    return cons(progression, iter(acc + 1));
+  };
+  return iter(0);
 };
 
 
 const game = () => {
-  const task = gameOfProgression();
-  const question = car(task);
-  const correctAnswer = String(cdr(task));
+  const start = getRandomInt(0, 10);
+  const step = getRandomInt(1, 10);
+  const pos = getRandomInt(0, 10);
+  const task = createProgression(start, step, pos);
+
+  const question = createString(task);
+  const correctAnswer = String(start + (pos * step));
   return cons(question, correctAnswer);
 };
+
 export default () => gameBody(currentTask, game);
