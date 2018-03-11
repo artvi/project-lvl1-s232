@@ -20,7 +20,7 @@ const gameBody = (currentTask, game) => {
     const answer = readlineSync.question('Your answer:');
 
 
-    if (answer == correctAnswer) {
+    if (answer === correctAnswer) {
       console.log('Correct! \n');
       return iter(wrightAnswers - 1);
     }

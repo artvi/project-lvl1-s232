@@ -38,7 +38,7 @@ const gameOfProgression = () => {
 const game = () => {
   const task = gameOfProgression();
   const question = car(task);
-  const correctAnswer = cdr(task);
+  const correctAnswer = String(cdr(task));
   return cons(question, correctAnswer);
 };
 export default () => gameBody(currentTask, game);
